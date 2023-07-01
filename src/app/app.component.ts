@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { loadScheme } from './shared/functions/load-scheme.function';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MedicalQueueFront';
+  schemePath = 'assets/first.scheme.css';
+
+  ngOnInit() {
+    loadScheme(this.schemePath);
+  }
+
 }
+
+
