@@ -1,0 +1,28 @@
+<h1 class="page-header">{{ title }}</h1>
+<p class="page-paragraph">Created on: {{ creationDate }}</p>
+<p class="page-paragraph">Page type: {{ pageType }}</p>
+
+<div *ngIf="admin">
+  <div [hidden]="editingMode">
+
+      <div class="page-content" id="content"> <app-data-grid [data]="dataArray"></app-data-grid> </div>
+      <button class="page-button" (click)="enableEditing()">Редактировать</button>
+      <app-data-grid [data]="dataArray"></app-data-grid>
+    </div>
+    
+    <div *ngIf="editingMode">
+      <textarea class="page-content" [(ngModel)]="content" 
+      oninput="this.style.height = 'auto'; this.style.height = (this.scrollHeight + 2) + 'px';">
+      </textarea>  <br>
+      <button class="page-button" (click)="onSaveContent()">Сохранить</button>
+      <app-data-grid [data]="dataArray"></app-data-grid>
+    </div>
+</div>
+
+
+
+<div *ngIf="!admin">
+    <div class="page-content" id="content"></div>
+    <app-data-grid [data]="dataArray"></app-data-grid>
+</div>
+
