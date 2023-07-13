@@ -13,11 +13,16 @@ import { MatListModule } from '@angular/material/list';
 import { PagesComponent } from './pages/pages.component';
 import { MonitorsComponent } from './monitors/monitors.component';
 import { DiagnosticsComponent } from './diagnostics/diagnostics.component';
-import { SchedulesComponent } from './tables/schedules/schedules.component';
-import { ElectronicQueueComponent } from './tables/electronic-queue/electronic-queue.component';
+import { SchedulesComponent } from './pages/tables/schedules/schedules.component';
+import { ElectronicQueueComponent } from './pages/tables/electronic-queue/electronic-queue.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { InformationPagesComponent } from './pages/tables/information-pages/information-pages.component';
+import { AnnouncementsComponent } from './pages/tables/announcements/announcements.component';
+import { SchemesOfWorkComponent } from './monitors/tables/schemes-of-work/schemes-of-work.component';
+import { ColorSchemesComponent } from './monitors/tables/color-schemes/color-schemes.component';
+import { ActiveMonitorsComponent } from './monitors/tables/active-monitors/active-monitors.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { MatSortModule } from '@angular/material/sort';
     MonitorsComponent,
     DiagnosticsComponent,
     SchedulesComponent,
-    ElectronicQueueComponent
+    ElectronicQueueComponent,
+    InformationPagesComponent,
+    AnnouncementsComponent,
+    SchemesOfWorkComponent,
+    ColorSchemesComponent,
+    ActiveMonitorsComponent
   ],
   imports: [
     BrowserModule,

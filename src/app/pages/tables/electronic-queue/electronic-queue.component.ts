@@ -15,7 +15,7 @@ export class ElectronicQueueComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable, {static: false}) table: MatTable<ElectronicQueueItem>;
   dataSource: ElectronicQueueDataSource;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  /** Columns displayed in the table. Columns can be added, removed, or reordered. */
   displayedColumns = ['actions', 'name'];
 
   ngOnInit() {

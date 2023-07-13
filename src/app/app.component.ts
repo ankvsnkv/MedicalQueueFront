@@ -12,6 +12,7 @@ import {} from '@angular/cdk/layout'
 })
 export class AppComponent {
 
+  ids: Array<String> = ['one', 'two', 'three', 'four']
   @ViewChild(MatSidenav, {static: false})
   sidenav!: MatSidenav;
 
