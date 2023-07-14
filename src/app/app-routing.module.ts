@@ -13,6 +13,7 @@ const routerOptions: ExtraOptions = {
 
 // http://localhost:4200/ -> PagesComponent
 // http://localhost:4200/monitors -> MonitorsComponent
+// http://localhost:4200/monitors/color_scheme_editor -> AdjustingTheColorSchemeComponent
 // http://localhost:4200/diagnostics -> DiagnosticsComponent
 const routes: Routes = [
   {path: '', component: PagesComponent},
