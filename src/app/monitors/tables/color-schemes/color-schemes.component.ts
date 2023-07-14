@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ColorSchemesDataSource, ColorSchemesItem } from './color-schemes-datasource';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-color-schemes',
@@ -26,5 +27,10 @@ export class ColorSchemesComponent implements AfterViewInit, OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+
+  constructor(private router: Router) { }
+  toColorSchemesPage() {
+    this.router.navigate(['/monitors/color_scheme_editor']);
   }
 }

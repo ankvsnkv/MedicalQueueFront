@@ -53,7 +53,12 @@
 
   <!-- Add Button -->
   <div style="text-align: center; background-color: white">
-    <button mat-button class="big-button">
+    <button
+      mat-button
+      class="big-button"
+      (click)="toggleBlock()"
+      *ngIf="!showBlock"
+    >
       <img
         src="../../../assets/add.png"
         alt="Добавление"
@@ -61,6 +66,83 @@
       />
       <span>Добавить</span>
     </button>
+  </div>
+
+  <!-- Поля ввода -->
+  <div style="background-color: white" *ngIf="showBlock">
+    <div class="grid-container">
+      <div>
+        <span class="text-field">Наименование схемы работы</span>
+        <mat-form-field class="text-field">
+          <mat-label>Введите наименование</mat-label>
+          <input matInput type="text" [(ngModel)]="value1" />
+          <button
+            *ngIf="value1"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="value1 = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <span class="text-field" style="margin-left: 10px"
+          >Таймаут запроса (секунд)</span
+        >
+        <mat-form-field class="text-field" style="margin-left: 10px">
+          <mat-label>Введите таймаут</mat-label>
+          <input matInput type="text" [(ngModel)]="value2" />
+          <button
+            *ngIf="value2"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="value2 = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <ng-container *ngFor="let field of formFields; let i = index">
+      <div>
+        <span class="text-field">{{ field.label }}</span>
+        <mat-form-field class="text-field">
+          <mat-label>{{ field.description }}</mat-label>
+          <input matInput type="text" [(ngModel)]="formFields[i].value" />
+          <button
+            *ngIf="field.value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="field.value = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </ng-container>
+
+    <!-- Кнопки отмены и сохранения -->
+    <div style="display: flex; justify-content: flex-end">
+      <button
+        class="selection_buttons"
+        (click)="!toggleBlock(); value1 = ''; value2 = ''; clearAllFormFields()"
+      >
+        Отменить
+      </button>
+      <button
+        class="selection_buttons"
+        style="margin-right: 20px"
+        (click)="!toggleBlock(); value1 = ''; value2 = ''; clearAllFormFields()"
+      >
+        Сохранить
+      </button>
+    </div>
   </div>
 
   <mat-paginator

@@ -3,6 +3,7 @@ import { Routes, RouterModule, ExtraOptions  } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { MonitorsComponent } from './monitors/monitors.component';
 import { DiagnosticsComponent } from './diagnostics/diagnostics.component';
+import { AdjustingTheColorSchemeComponent } from './adjusting-the-color-scheme/adjusting-the-color-scheme.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -16,6 +17,7 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   {path: '', component: PagesComponent},
   {path: 'monitors', component: MonitorsComponent},
+  {path: 'monitors/color_scheme_editor', component: AdjustingTheColorSchemeComponent},
   {path: 'diagnostics', component: DiagnosticsComponent}
 ];
 
