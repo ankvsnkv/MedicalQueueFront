@@ -1,0 +1,31 @@
+<div class="content {{ storedTheme }}" role="main">
+  <button class="buttons">Назад</button>
+  <div class="theme-options">
+    <div id="theme-white" (click)="setTheme('theme-white')"></div>
+    <div id="theme-blue" (click)="setTheme('theme-blue')"></div>
+    <div id="theme-orange" (click)="setTheme('theme-orange')"></div>
+    <div id="theme-purple" (click)="setTheme('theme-purple')"></div>
+    <div id="theme-green" (click)="setTheme('theme-green')"></div>
+    <div id="theme-black" (click)="setTheme('theme-black')"></div>
+  </div>
+  <div class="content-box">
+    <h3>{{ storedTheme }}</h3>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+    </div>
+    <h3>Lorem</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores atque
+      veritatis dicta. Blanditiis voluptates fuga impedit, vel nostrum sunt
+      autem beatae culpa. Doloremque maiores impedit pariatur vel, tenetur culpa
+      officia eum minus neque illo ea aliquid atque id assumenda esse illum
+      omnis non. Debitis illo quo ea cumque, voluptatibus odio.
+    </p>
+    <h5>Lorem50</h5>
+
+    <button class="buttons">Сохранить</button>
+  </div>
+</div>
